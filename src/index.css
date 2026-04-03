@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-main: #0F172A;
+  --color-bg-card: #1E293B;
+  --color-border-main: #334155;
+  --color-primary: #3B82F6;
+  --color-primary-light: #60A5FA;
+  --color-text-main: #E2E8F0;
+  --color-text-muted: #94A3B8;
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+}
+
+:root {
+  --bg-main: #0F172A;
+  --bg-card: #1E293B;
+  --border: #334155;
+  --primary: #3B82F6;
+  --primary-light: #60A5FA;
+  --text-main: #E2E8F0;
+  --text-muted: #94A3B8;
+  --success: #22C55E;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  
+  /* Theme specific utility classes */
+  .header-gradient {
+    background: linear-gradient(90deg, #1E3A8A, #3B82F6);
+  }
+  
+  .card-theme {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: 0.3s;
+  }
+  
+  .card-theme:hover {
+    box-shadow: 0 0 10px var(--primary);
+  }
+  
+  .btn-theme {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .btn-theme:hover {
+    background: var(--primary-light);
+  }
+}
+
+/* Custom scrollbar for chat */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
